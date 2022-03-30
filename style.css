@@ -1,0 +1,250 @@
+.main {
+display: grid;
+grid-template: 1fr 1fr/1fr;
+}/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+body {
+    height:100vh;
+    display: grid;
+    grid-template:.2fr 1fr/.3fr 1fr;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar content";
+}
+
+.sidebar{
+    background-color: lightblue;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.sidebar > .container > div{
+display: flex;
+align-items: center;
+}
+
+.header {
+    background-color: white;
+    grid-area: header;
+}
+
+.content {
+    background-color: lightgrey;
+    grid-area: content;
+    display:grid;
+    grid-template: 1fr 1fr / 3fr 1fr;
+    grid-template-areas: 
+    "projects rightcontent"
+    "projects rightcontent";
+}
+.projects {
+    grid-area: projects;
+    display: grid;
+    grid-template: 30px 1fr 1fr 1fr / 1fr 1fr;
+    padding: 3%;
+    gap: 1rem;
+}
+.projectCard {
+    border: solid 1px white;
+    border-radius: 10px;
+    background-color: white;
+    padding: 1rem;
+    position: relative;
+}
+.images {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 1rem;
+}
+.images > img {
+    width: 2rem;
+    height: auto;
+}
+.projects > h1{
+grid-column-start: 1;
+grid-column-end: 3;
+}
+
+.rightContent {
+    grid-area: rightcontent;
+    border: solid 1px black;
+
+}
+.announcements > div {
+    height: 100%;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.trending {
+    grid-area: trending;
+}
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 3%;
+    padding-right: 3%;
+    /* box-shadow: 3px 10px black; */
+}
+
+.header > div  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+#search {
+    width: 100%;
+}
+.search {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding-right: 20%;
+}
+
+.profile {
+    display: grid;
+    grid-template: 1fr 1fr/.25fr 1fr;
+}
+
+.profile img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.sidebar > div > div > img {
+    width: 2rem;
+    margin: .5rem;
+}
+
+.quickMenu {
+    display: flex;
+    align-items: center;
+}
+
+.rightContent {
+    display: grid;
+    grid-template: 30px 1fr 30px 1fr / 1fr;
+    grid-template-areas: 
+    "header1"
+    "announcements"
+    "header2"
+    "content2";
+}
+.header1 {
+    grid-area: header1;
+}
+.announcements {
+    grid-area: announcements;
+}
+.header2 {
+    grid-area: header2;
+}
+.trending {
+    grid-area: content2;
+}
